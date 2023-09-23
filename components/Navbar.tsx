@@ -25,17 +25,17 @@ const Navbar = () => {
         </ul>
         <div className="hidden sm:flex space-x-4">
           <Link href="https://www.instagram.com/" legacyBehavior>
-            <span className="hover:text-blue-400 cursor-pointer">
+            <span className="hover:text-pink-600 hover:bg-white cursor-pointer">
               <FaInstagram className="text-2xl" />
             </span>
           </Link>
           <Link href="https://www.facebook.com/" legacyBehavior>
-            <span className="hover:text-blue-400 cursor-pointer">
+            <span className="hover:text-blue-400 hover:bg-white cursor-pointer">
               <FaFacebook className="text-2xl" />
             </span>
           </Link>
           <Link href="https://www.linkedin.com/" legacyBehavior>
-            <span className="hover:text-blue-400 cursor-pointer">
+            <span className="hover:text-blue-400 hover:bg-white cursor-pointer">
               <FaLinkedin className="text-2xl" />
             </span>
           </Link>
