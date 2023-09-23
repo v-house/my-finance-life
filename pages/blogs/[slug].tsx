@@ -2,6 +2,7 @@ import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { blogPosts } from "../../data/blogPosts";
+import { FaLinkedin, FaInstagram, FaFacebook } from "react-icons/fa";
 
 // Interface for a comment
 interface Comment {
@@ -69,7 +70,7 @@ const BlogPost = () => {
               <blockquote className="text-xl text-gray-700 font-medium italic mb-6">
                 "{blogPost.subTitle}"
               </blockquote>
-              <div className="text-gray-600 text-lg mb-4 flex flex-col md:flex-row md:justify-evenly md:items-center mx-2 bg-blue-200 rounded-lg shadow-md py-1">
+              <div className="text-gray-600 text-lg mb-4 flex flex-col md:flex-row md:justify-between md:items-center bg-blue-200 rounded-lg shadow-md py-1">
                 <div className="flex items-center m-2">
                   <div className="rounded-full h-8 w-8 bg-blue-500 flex items-center justify-center">
                     <span className="text-white text-xl font-bold">
@@ -109,38 +110,86 @@ const BlogPost = () => {
                   ))}
                 </div>
               ))}
-              <h2 className="text-2xl font-semibold mb-2">Comments</h2>
-              <ul>
-                {comments.map((comment, index) => (
-                  <li
-                    key={index}
-                    className="mb-4 p-4 bg-white rounded-lg shadow-md"
-                  >
-                    <div className="flex justify-between">
-                      <div>
-                        <p className="font-semibold">{comment.name}</p>
-                      </div>
-                      <div>
-                        <p className="text-right text-gray-600">
-                          {comment.date}
-                        </p>
-                      </div>
-                    </div>
-                    <p>{comment.comment}</p>
-                  </li>
-                ))}
-              </ul>
+              <div className="bg-blue-100 p-4 mt-8 rounded-lg shadow-md">
+                <h2 className="text-xl font-semibold text-blue-900 mb-2">
+                  About Me
+                </h2>
+                <hr className="my-2 md:my-4 text-slate-900 bg-slate-900" />
+                <div className="flex items-center space-x-4 text-gray-600 text-lg mb-4 justify-between md:flex-row">
+                  <div className="flex items-center">
+                    <p className="font-semibold">{blogPost.writer}</p>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <a
+                      href="#"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      title="LinkedIn"
+                    >
+                      <FaLinkedin className="h-6 w-6 text-blue-500 hover:text-blue-700 transition duration-300 ease-in-out" />
+                    </a>
+                    <a
+                      href="#"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      title="Instagram"
+                    >
+                      <FaInstagram className="h-6 w-6 text-blue-500 hover:text-blue-700 transition duration-300 ease-in-out" />
+                    </a>
+                    <a
+                      href="#"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      title="Facebook"
+                    >
+                      <FaFacebook className="h-6 w-6 text-blue-500 hover:text-blue-700 transition duration-300 ease-in-out" />
+                    </a>
+                  </div>
+                </div>
+                <p className="text-gray-600 text-md mb-2 line-clamp-4">
+                  {blogPost.writerDescription}
+                </p>
+              </div>
             </div>
-            <div className="lg:w-1/3 lg:ml-4">
-              {blogPost.images.map((image) => (
-                <img
-                  key={image}
-                  src={`${image}`}
-                  alt={blogPost.title}
-                  className="w-full mb-2"
-                />
+            <div className="lg:w-1/3 lg:ml-4 mt-6 lg:mt-0">
+              {blogPost.images.map((image, imageIndex) => (
+                <div
+                  key={imageIndex}
+                  className="mb-2 border border-gray-300 rounded-lg hover:border-blue-500 hover:text-blue-900 transition duration-300 ease-in-out"
+                >
+                  <img
+                    src={`${image}`}
+                    alt={blogPost.title}
+                    className="w-full rounded-lg"
+                  />
+                  <p className="text-sm text-center text-gray-600 my-2 font-bold">
+                    Figure {imageIndex + 1}:{" "}
+                    {blogPost.imagedescription[imageIndex]}
+                  </p>
+                </div>
               ))}
             </div>
+          </div>
+          <div className="p-2">
+            <h2 className="text-2xl font-semibold mb-2 mt-8 ml-2">Comments</h2>
+            <ul>
+              {comments.map((comment, index) => (
+                <li
+                  key={index}
+                  className="mb-4 p-4 bg-white rounded-lg shadow-md"
+                >
+                  <div className="flex justify-between">
+                    <div>
+                      <p className="font-semibold">{comment.name}</p>
+                    </div>
+                    <div>
+                      <p className="text-right text-gray-600">{comment.date}</p>
+                    </div>
+                  </div>
+                  <p>{comment.comment}</p>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </div>

@@ -7,6 +7,8 @@ export const blogPosts = [
     banner:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpsZBLNCe5o5LdAprrf3ahV_tWslFzAUz0VxLf2Rb-1TVhxMOCyQVyko0tmMZQAMNT_lQ&usqp=CAU",
     writer: "K Vivek Kumar",
+    writerDescription:
+      "Helsdlsdkfj lad;sa akfhlkfs asodjspoda saodosapjdsa .dfsgs.",
     date: "September 21, 2023",
     subTitle:
       "Nancy is the visual, center, and youngest (maknae) of the girl group MOMOLAND. The reason she is so popular is largely due to her looks. She is half-Korean and half-American, so she has a mixed look, which makes her unique.",
@@ -40,6 +42,12 @@ export const blogPosts = [
     images: [
       "https://www.musicmundial.com/en/wp-content/uploads/2021/01/momoland.jpg",
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSY7kAzxQ_1hB2MU8fSR--2P-a8ZWvR_uqV6g&usqp=CAU",
+      "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQLq0tKRMSBfrVjSF3P0phCe8kptsL4CidTfMep4XtElcs7MopI",
+    ],
+    imagedescription: [
+      "This figure describes the momoland group.",
+      "This figure is from the first day of the feb month to the last day of the july month and a worth while group thing.",
+      "This is the latest image of Nancy Jewel McDonie",
     ],
   },
 ];
