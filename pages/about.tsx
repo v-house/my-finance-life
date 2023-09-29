@@ -1,77 +1,89 @@
-const AboutUs = () => {
+import { FaRocket } from "react-icons/fa";
+import Image from "next/image";
+
+const AboutPage = () => {
   return (
-    <div>
-      <div className="bg-blue-100 py-16">
-        <div className="container mx-auto px-4">
-          <h1 className="text-4xl font-bold text-blue-900 mb-8 text-center">
-            About Us
-          </h1>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-            <div className="md:pr-8">
-              <section className="mb-8">
-                <h2 className="text-3xl font-semibold mb-4 text-blue-900">
-                  Our Team
-                </h2>
-                <p className="text-gray-700 leading-7">
-                  Meet the passionate team behind My Finance Life. Our experts
-                  come from diverse backgrounds in finance, technology, and
-                  education. Together, we are dedicated to delivering valuable
-                  insights and resources to help you navigate the complexities
-                  of personal finance.
-                </p>
-              </section>
-
-              <section className="mb-8">
-                <h2 className="text-3xl font-semibold mb-4 text-blue-900">
-                  Our Mission
-                </h2>
-                <p className="text-gray-700 leading-7">
-                  At My Finance Life, we are on a mission to empower individuals
-                  by providing them with the knowledge and tools to take control
-                  of their financial well-being. We believe that financial
-                  literacy is the key to unlocking a brighter and more
-                  prosperous future.
-                </p>
-              </section>
-
-              <section className="mb-8">
-                <h2 className="text-3xl font-semibold mb-4 text-blue-900">
-                  Our Vision
-                </h2>
-                <p className="text-gray-700 leading-7">
-                  Our vision is a world where everyone, regardless of their
-                  background or circumstances, has the ability to make informed
-                  financial decisions. We aim to create a community of
-                  financially savvy individuals who can achieve their financial
-                  goals and aspirations.
-                </p>
-              </section>
-
-              <section className="mb-8">
-                <h2 className="text-3xl font-semibold mb-4 text-blue-900">
-                  Why Choose Us
-                </h2>
-                <p className="text-gray-700 leading-7">
-                  With a dedicated team of experts in finance, technology, and
-                  education, we offer comprehensive resources and personalized
-                  guidance to help you navigate the complexities of personal
-                  finance. We're committed to your financial success.
-                </p>
-              </section>
-            </div>
-            <div>
-              <img
-                src="https://i.pinimg.com/564x/fa/4e/11/fa4e11fe456df4f567c812f7a700986f.jpg"
-                alt="Our Team"
-                className="w-full h-auto object-cover rounded-lg shadow-lg"
-              />
-            </div>
+    <div className="bg-blue-100 py-4">
+      <div className="m-1 lg:m-6">
+        <div className="flex items-center mb-4">
+          <Image src="/logo.jpeg" alt="Logo" width={64} height={64} />
+          <div className="ml-4">
+            <h1 className="text-4xl font-bold text-blue-900">Finanzy</h1>
+            <h3 className="text-lg text-gray-600">
+              A financial radio for a better world
+            </h3>
           </div>
-          <div className="text-center mt-12">
-            <h2 className="text-3xl font-semibold mb-4 text-blue-900">
-              Heading Note
-            </h2>
-            <p className="text-gray-700 leading-7">Let's do it better.</p>
+        </div>
+        <hr className="border-t border-blue-500 my-4" />
+        <div className="bg-blue-900 text-white p-6 rounded-lg flex flex-col lg:flex-row items-center">
+          <div className="lg:w-1/2 lg:mr-8 mb-6 lg:mb-0">
+            <Image
+              src="/about_image.jpeg"
+              alt="Image Description"
+              width={500}
+              height={400}
+              layout="responsive"
+              className="rounded-lg"
+            />
+          </div>
+          <div className="lg:w-1/2">
+            <p className="text-2xl font-bold mb-4">Exciting Times Ahead! 🚀</p>
+            <p className="text-lg">
+              I am thrilled to announce a milestone, in the finance world; the
+              Nifty 50 has reached a 20,000 points! 📈🙌
+            </p>
+            <p className="text-lg">
+              This remarkable accomplishment not demonstrates the resilience and
+              robustness of our economy. Also showcases the combined efforts,
+              innovation and determination of all individuals, businesses,
+              investors and traders.who have contributed to this incredible
+              journey.
+            </p>
+            <p className="text-lg">
+              It is a testament, to the strength of the markets the resilient
+              spirit of our nation and the boundless potential that lies ahead.
+              As we find ourselves on the brink of this occasion let us not
+              forget that it represents more than a number displayed on a
+              screen; it symbolizes progress, prosperity and infinite
+              possibilities.
+            </p>
+            <p className="text-lg">
+              This milestone serves as a reminder that in the realm of finance
+              there are no limits – it merely marks the start of something. Let
+              us remain dedicated to making investment choices nurturing
+              innovation and cultivating an environment where opportunities
+              continue to flourish.
+            </p>
+            <p className="text-lg">
+              It's no longer a dream. It's a history from where the real game
+              begins.📈📈
+            </p>
+            <p className="text-lg">
+              Congratulations, to all those who have played a role in this
+              journey!
+            </p>
+          </div>
+        </div>
+        <div className="container mx-auto py-6 flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+          {/* About Card */}
+          <div className="bg-blue-100 p-4 rounded-lg flex-1">
+            <h2 className="text-2xl font-semibold text-blue-900">ABOUT</h2>
+            <p className="text-gray-700 mt-2">
+              Finanzy is a newsletter where you can dive into financial
+              education, financial literacy, financial news, and business
+              updates. We are dedicated to providing top-class personal finance
+              knowledge to the public and making them financially independent.
+            </p>
+          </div>
+
+          {/* Vision Card */}
+          <div className="bg-blue-100 p-4 rounded-lg flex-1">
+            <h2 className="text-2xl font-semibold text-blue-900">VISION</h2>
+            <p className="text-gray-700 mt-2">
+              "To be the trusted source of financial insights, empowering our
+              readers with the knowledge to make informed decisions and achieve
+              financial success.”
+            </p>
           </div>
         </div>
       </div>
@@ -79,4 +91,4 @@ const AboutUs = () => {
   );
 };
 
-export default AboutUs;
+export default AboutPage;

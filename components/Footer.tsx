@@ -1,36 +1,28 @@
-import { FaInstagram, FaFacebook, FaLinkedin } from "react-icons/fa";
+import { FaLinkedin } from "react-icons/fa";
+import Image from "next/image";
 
 const Footer = () => {
   return (
-    <footer className="bg-blue-900 text-white py-6">
-      <div className="container mx-auto flex flex-col items-center">
-        <div className="flex space-x-4 mb-4">
-          <a
-            href="https://www.instagram.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-            title="Instagram"
-          >
-            <FaInstagram className="text-2xl hover:text-pink-500 hover:bg-white transition duration-300 ease-in-out" />
-          </a>
-          <a
-            href="https://www.facebook.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-            title="Facebook"
-          >
-            <FaFacebook className="text-2xl hover:text-blue-400 hover:bg-white transition duration-300 ease-in-out" />
-          </a>
-          <a
-            href="https://www.linkedin.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-            title="LinkedIn"
-          >
-            <FaLinkedin className="text-2xl hover:text-blue-400 hover:bg-white transition duration-300 ease-in-out" />
-          </a>
+    <footer className="bg-blue-900 text-white p-1 lg:p-6 flex items-center justify-between">
+      <div className="flex items-center">
+        <div className="mr-4">
+          <Image src="/logo.jpeg" alt="Logo" width={64} height={64} />
         </div>
-        <p className="text-gray-400 text-sm">Connect with us on social media</p>
+        <div>
+          <h4 className="text-2xl font-semibold">Finanzy</h4>
+          <h6 className="text-sm">A financial radio for a better world</h6>
+        </div>
+      </div>
+      <div>
+        <a
+          href="https://www.linkedin.com/company/finanzy/"
+          target="_blank"
+          rel="noopener noreferrer"
+          title="LinkedIn"
+          className="text-3xl hover:text-blue-400 transition duration-300 ease-in-out"
+        >
+          <FaLinkedin />
+        </a>
       </div>
     </footer>
   );

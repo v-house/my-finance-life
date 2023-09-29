@@ -1,44 +1,46 @@
 import Link from "next/link";
-import { FaInstagram, FaFacebook, FaLinkedin } from "react-icons/fa";
+import { FaLinkedin } from "react-icons/fa";
+import Image from "next/image";
+import router from "next/router";
 
 const Navbar = () => {
   return (
-    <nav className="bg-blue-900 text-white p-4 sticky top-0 z-10">
+    <nav className="p-2 px-1 lg:px-6 sticky top-0 z-10 rounded-b-lg lg:rounded-b-2xl bg-transparent">
       <div className="container mx-auto flex justify-between items-center">
-        <div className="text-lg font-semibold">
-          <span className="flex items-center space-x-2">
-            <span className="text-2xl">🚀</span>
-            My Finance Life
-          </span>
+        <div className="flex items-center space-x-2">
+          <Image
+            src="/full_logo.jpg"
+            alt="Logo"
+            width={160}
+            height={100}
+            className="cursor-pointer rounded-lg"
+          />
         </div>
-        <ul className="flex space-x-4">
-          <li>
-            <Link href="/" legacyBehavior>
-              <span className="hover:underline cursor-pointer">Blogs</span>
-            </Link>
-          </li>
-          <li>
-            <Link href="/about" legacyBehavior>
-              <span className="hover:underline cursor-pointer">About Us</span>
-            </Link>
-          </li>
-        </ul>
-        <div className="hidden sm:flex space-x-4">
-          <Link href="https://www.instagram.com/" legacyBehavior>
-            <span className="hover:text-pink-600 hover:bg-white cursor-pointer">
-              <FaInstagram className="text-2xl" />
-            </span>
-          </Link>
-          <Link href="https://www.facebook.com/" legacyBehavior>
-            <span className="hover:text-blue-400 hover:bg-white cursor-pointer">
-              <FaFacebook className="text-2xl" />
-            </span>
-          </Link>
-          <Link href="https://www.linkedin.com/" legacyBehavior>
-            <span className="hover:text-blue-400 hover:bg-white cursor-pointer">
-              <FaLinkedin className="text-2xl" />
-            </span>
-          </Link>
+        <div className="bg-blue-900 text-white rounded-lg p-2 px-4">
+          <ul className="flex space-x-4">
+            <li>
+              <Link href="/" legacyBehavior>
+                <a
+                  className={`nav-button ${
+                    router.pathname === "/" ? "text-blue-200" : ""
+                  }`}
+                >
+                  Blogs
+                </a>
+              </Link>
+            </li>
+            <li>
+              <Link href="/about" legacyBehavior>
+                <a
+                  className={`nav-button ${
+                    router.pathname === "/about" ? "text-blue-200" : ""
+                  }`}
+                >
+                  About Us
+                </a>
+              </Link>
+            </li>
+          </ul>
         </div>
       </div>
     </nav>
