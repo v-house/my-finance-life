@@ -1,10 +1,10 @@
-"use client";
-
 import Link from "next/link";
 import Image from "next/image";
-import router from "next/router";
+import { useRouter } from "next/router";
 
 const Navbar = () => {
+  const { asPath } = useRouter();
+
   return (
     <nav className="p-2 px-1 lg:px-6 sticky top-0 z-10 rounded-b-lg lg:rounded-b-2xl bg-transparent">
       <div className="container mx-auto flex justify-between items-center">
@@ -20,26 +20,24 @@ const Navbar = () => {
         <div className="bg-blue-900 text-white rounded-lg p-2 px-4">
           <ul className="flex space-x-4">
             <li>
-              <Link href="/" legacyBehavior>
-                <a
-                  className={`nav-button ${
-                    router.pathname === "/" ? "text-blue-200" : ""
-                  }`}
-                >
-                  Blogs
-                </a>
-              </Link>
+              <a
+                href="/"
+                className={`nav-button ${
+                  asPath === "/" ? "text-blue-200" : ""
+                }`}
+              >
+                Blogs
+              </a>
             </li>
             <li>
-              <Link href="/about" legacyBehavior>
-                <a
-                  className={`nav-button ${
-                    router.pathname === "/about" ? "text-blue-200" : ""
-                  }`}
-                >
-                  About Us
-                </a>
-              </Link>
+              <a
+                href="/about"
+                className={`nav-button ${
+                  asPath === "/about" ? "text-blue-200" : ""
+                }`}
+              >
+                About Us
+              </a>
             </li>
           </ul>
         </div>
