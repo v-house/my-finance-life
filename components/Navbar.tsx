@@ -1,5 +1,6 @@
+"use client";
+
 import Link from "next/link";
-import { FaLinkedin } from "react-icons/fa";
 import Image from "next/image";
 import router from "next/router";
 

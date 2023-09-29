@@ -1,4 +1,3 @@
-import { FaRocket } from "react-icons/fa";
 import Image from "next/image";
 
 const AboutPage = () => {
