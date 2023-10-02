@@ -119,32 +119,6 @@ const BlogPost = () => {
                   <div className="flex items-center">
                     <p className="font-semibold">{blogPost.writer}</p>
                   </div>
-                  <div className="flex items-center space-x-2">
-                    <a
-                      href="#"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      title="LinkedIn"
-                    >
-                      <FaLinkedin className="h-6 w-6 text-blue-500 hover:text-blue-700 transition duration-300 ease-in-out" />
-                    </a>
-                    <a
-                      href="#"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      title="Instagram"
-                    >
-                      <FaInstagram className="h-6 w-6 text-blue-500 hover:text-blue-700 transition duration-300 ease-in-out" />
-                    </a>
-                    <a
-                      href="#"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      title="Facebook"
-                    >
-                      <FaFacebook className="h-6 w-6 text-blue-500 hover:text-blue-700 transition duration-300 ease-in-out" />
-                    </a>
-                  </div>
                 </div>
                 <p className="text-gray-600 text-md mb-2 line-clamp-4">
                   {blogPost.writerDescription}
@@ -172,24 +146,30 @@ const BlogPost = () => {
           </div>
           <div className="p-2">
             <h2 className="text-2xl font-semibold mb-2 mt-8 ml-2">Comments</h2>
-            <ul>
-              {comments.map((comment, index) => (
-                <li
-                  key={index}
-                  className="mb-4 p-4 bg-white rounded-lg shadow-md"
-                >
-                  <div className="flex justify-between">
-                    <div>
-                      <p className="font-semibold">{comment.name}</p>
+            {comments.length === 0 ? (
+              <p className="my-4 mx-2">No comments yet.</p>
+            ) : (
+              <ul>
+                {comments.map((comment, index) => (
+                  <li
+                    key={index}
+                    className="mb-4 p-4 bg-white rounded-lg shadow-md"
+                  >
+                    <div className="flex justify-between">
+                      <div>
+                        <p className="font-semibold">{comment.name}</p>
+                      </div>
+                      <div>
+                        <p className="text-right text-gray-600">
+                          {comment.date}
+                        </p>
+                      </div>
                     </div>
-                    <div>
-                      <p className="text-right text-gray-600">{comment.date}</p>
-                    </div>
-                  </div>
-                  <p>{comment.comment}</p>
-                </li>
-              ))}
-            </ul>
+                    <p>{comment.comment}</p>
+                  </li>
+                ))}
+              </ul>
+            )}
           </div>
         </div>
       </div>

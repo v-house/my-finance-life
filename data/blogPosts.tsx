@@ -1,53 +1,44 @@
 export const blogPosts = [
   {
-    id: "650bd8c497fdad1309ab167f",
+    id: "650bd8c497fdad1309ab167fr",
     slug: "650bd8c497fdad1309ab167f",
-    title: "Discovering Nancy Jewel McDonie: The Rising Star of Momoland",
-    tags: ["Nancy", "About", "kpop"],
-    banner:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpsZBLNCe5o5LdAprrf3ahV_tWslFzAUz0VxLf2Rb-1TVhxMOCyQVyko0tmMZQAMNT_lQ&usqp=CAU",
-    writer: "K Vivek Kumar",
-    writerDescription:
-      "Helsdlsdkfj lad;sa akfhlkfs asodjspoda saodosapjdsa .dfsgs.",
-    date: "September 21, 2023",
-    subTitle:
-      "Nancy is the visual, center, and youngest (maknae) of the girl group MOMOLAND. The reason she is so popular is largely due to her looks. She is half-Korean and half-American, so she has a mixed look, which makes her unique.",
+    title: "Finanzy",
+    tags: ["Finanzy", "Introduction"],
+    banner: "/about_image.jpeg",
+    writer: "Finanzy",
+    writerDescription: "A financial radio for a better world.",
+    date: "October 2, 2023",
+    subTitle: "A financial radio for a better world.",
     description: [
       {
-        heading: "Early Life and Background",
+        heading: "About",
         subDescriptions: [
-          "Nancy's journey to stardom began in Daegu, where she spent her formative years. Her multicultural heritage, with a South Korean mother and an American father, has undoubtedly played a role in shaping her unique charm and versatility. This multicultural background has allowed her to connect with a global fan base, transcending cultural boundaries.",
-          "Like many aspiring K-pop idols, Nancy's journey began with a dream and unwavering determination. She embarked on her path to stardom through auditions, talent showcases, and perseverance. Her exceptional beauty and talent were evident even in her early days, attracting attention in the competitive entertainment landscape.",
-          // Add more sub-descriptions here
+          "Finanzy is a newsletter where you can dive into financial education, financial literacy, financial news, and business updates. We were working towards providing top-class personal finance knowledge to the public and making them financially independent.",
         ],
       },
       {
-        heading: "Rise to Fame with Momoland",
+        heading: "Vision",
         subDescriptions: [
-          "Nancy's breakthrough came when she joined Momoland, a girl group formed by Dublekick Company and MLD Entertainment. With her striking visuals and undeniable charisma, she quickly became a standout member of the group. Nancy contributed as a lead vocalist and visual, captivating audiences with her angelic voice and captivating stage presence.",
-          'Momoland gained widespread recognition with their hit songs like "BBoom BBoom" and "BAAM." These chart-topping tracks showcased Nancy\'s vocal prowess and remarkable dancing skills, solidifying her status as one of the group\'s key figures.',
-          "In the world of K-pop, Nancy Jewel McDonie shines as a remarkable talent and a beloved figure. Her journey from Daegu to the global stage is a testament to her unwavering passion and dedication. With her striking visuals, exceptional talent, and charismatic presence, Nancy has undoubtedly left an indelible mark on the K-pop industry, captivating hearts around the world.",
-          // Add more sub-descriptions here
+          "To be the trusted source of financial insights, empowering our readers with the knowledge to make informed decisions and achieve financial success.",
+        ],
+      },
+      {
+        heading: "Mission",
+        subDescriptions: [
+          "We are dedicated to providing top-class personal finance education and guidance, equipping our readers with the tools and strategies they need to confidently navigate the complex world of finance. With a commitment to transparency and integrity, we strive to deliver relevant and up-to-date information that empowers individuals to take control of their financially well-being. By fostering financial literacy and promoting responsible financial practices, we aim to play a pivotal role in helping our readers become financially independent and achieve their goals. Our mission is to be the go-to resource for all things finance, providing valuable insights, practical tips, and actionable advice that our readers can trust and rely on. Join us on this journey towards financial success, and let us help you unlock your full financial potential.",
+          "Financial education is the key to empowering individuals and enabling them to make informed financial decisions. Our comprehensive newsletter covers various topics such as financial education, financial literacy, financial news, and business updates. We strive to break down complex financial concepts into simple and easily understandable language, ensuring our readers can grasp and apply the information to their financial situations.",
+          "At Finanzy, we are passionate about helping our readers achieve financial independence. We aim to give them the knowledge and tools to manage their money effectively, invest wisely, and plan for their future. Our goal is to empower individuals to take control of their financial well-being and build a solid foundation for long-term financial success.",
         ],
       },
       {
         heading: "Conclusion",
         subDescriptions: [
-          "As Nancy continues her journey with Momoland and explores new horizons, fans eagerly anticipate her future endeavors. Her impact as a K-pop idol, actress, and influencer remains undeniable, and her star continues to rise. Nancy Jewel McDonie is not just a rising star; she's a shining beacon in the world of entertainment, illuminating the path for the next generation of artists.",
-          // Add more sub-descriptions here
+          "By staying up-to-date with the latest developments in the financial industry, we ensure that our readers always have access to accurate and timely information. We believe in the power of knowledge and strive to equip our readers with the insights they need to make informed decisions about their financial matters.",
+          "Join us on this journey towards financial success. Subscribe to our newsletter and let us be your trusted guide in navigating the world of personal finance. Together, we can achieve financial independence and create a brighter future.",
         ],
       },
-      // Add more sections with headings and sub-descriptions as needed
     ],
-    images: [
-      "https://www.musicmundial.com/en/wp-content/uploads/2021/01/momoland.jpg",
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSY7kAzxQ_1hB2MU8fSR--2P-a8ZWvR_uqV6g&usqp=CAU",
-      "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQLq0tKRMSBfrVjSF3P0phCe8kptsL4CidTfMep4XtElcs7MopI",
-    ],
-    imagedescription: [
-      "This figure describes the momoland group.",
-      "This figure is from the first day of the feb month to the last day of the july month and a worth while group thing.",
-      "This is the latest image of Nancy Jewel McDonie",
-    ],
+    images: ["/about_image.jpeg"],
+    imagedescription: ["Finanzy - A financial radio for a better world."],
   },
 ];
