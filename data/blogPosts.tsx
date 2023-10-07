@@ -11,30 +11,19 @@ export const blogPosts = [
     subTitle: "A financial radio for a better world.",
     description: [
       {
-        heading: "About",
+        heading: "Exciting Times Ahead! 🚀",
         subDescriptions: [
-          "Finanzy is a newsletter where you can dive into financial education, financial literacy, financial news, and business updates. We were working towards providing top-class personal finance knowledge to the public and making them financially independent.",
-        ],
-      },
-      {
-        heading: "Vision",
-        subDescriptions: [
-          "To be the trusted source of financial insights, empowering our readers with the knowledge to make informed decisions and achieve financial success.",
-        ],
-      },
-      {
-        heading: "Mission",
-        subDescriptions: [
-          "We are dedicated to providing top-class personal finance education and guidance, equipping our readers with the tools and strategies they need to confidently navigate the complex world of finance. With a commitment to transparency and integrity, we strive to deliver relevant and up-to-date information that empowers individuals to take control of their financially well-being. By fostering financial literacy and promoting responsible financial practices, we aim to play a pivotal role in helping our readers become financially independent and achieve their goals. Our mission is to be the go-to resource for all things finance, providing valuable insights, practical tips, and actionable advice that our readers can trust and rely on. Join us on this journey towards financial success, and let us help you unlock your full financial potential.",
-          "Financial education is the key to empowering individuals and enabling them to make informed financial decisions. Our comprehensive newsletter covers various topics such as financial education, financial literacy, financial news, and business updates. We strive to break down complex financial concepts into simple and easily understandable language, ensuring our readers can grasp and apply the information to their financial situations.",
-          "At Finanzy, we are passionate about helping our readers achieve financial independence. We aim to give them the knowledge and tools to manage their money effectively, invest wisely, and plan for their future. Our goal is to empower individuals to take control of their financial well-being and build a solid foundation for long-term financial success.",
+          "I am thrilled to announce a milestone in the finance world: the Nifty 50 has reached 20,000 points! 📈🙌",
+          "This remarkable accomplishment not only demonstrates the resilience and robustness of our economy but also showcases the combined efforts, innovation, and determination of all individuals, businesses, investors, and traders who have contributed to this incredible journey.",
+          "It is a testament to the strength of the markets, the resilient spirit of our nation, and the boundless potential that lies ahead. As we find ourselves on the brink of this occasion, let us not forget that it represents more than a number displayed on a screen; it symbolizes progress, prosperity, and infinite possibilities.",
+          "This milestone serves as a reminder that in the realm of finance, there are no limits – it merely marks the start of something. Let us remain dedicated to making investment choices, nurturing innovation, and cultivating an environment where opportunities continue to flourish.",
         ],
       },
       {
         heading: "Conclusion",
         subDescriptions: [
-          "By staying up-to-date with the latest developments in the financial industry, we ensure that our readers always have access to accurate and timely information. We believe in the power of knowledge and strive to equip our readers with the insights they need to make informed decisions about their financial matters.",
-          "Join us on this journey towards financial success. Subscribe to our newsletter and let us be your trusted guide in navigating the world of personal finance. Together, we can achieve financial independence and create a brighter future.",
+          "It's no longer a dream. It's history from where the real game begins. 📈📈",
+          "Congratulations to all those who have played a role in this journey!",
         ],
       },
     ],

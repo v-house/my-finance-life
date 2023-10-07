@@ -1,57 +1,60 @@
-import Image from "next/image";
+// components/AboutUs.tsx
 
-const AboutPage = () => {
+import React from "react";
+import { FaRegLightbulb, FaChartPie, FaBullseye } from "react-icons/fa";
+
+const AboutUs: React.FC = () => {
   return (
-    <div className="bg-blue-100 py-4">
-      <div className="m-1 lg:m-6">
-        <div className="flex items-center mb-4">
-          <Image src="/logo.jpeg" alt="Logo" width={64} height={64} />
-          <div className="ml-4">
-            <h1 className="text-4xl font-bold text-blue-900">Finanzy</h1>
-            <h3 className="text-lg text-gray-600">
-              A financial radio for a better world
-            </h3>
-          </div>
+    <div className="bg-white py-16">
+      <div className="container mx-auto px-4">
+        <div className="text-center">
+          <h1 className="text-4xl font-bold text-blue-600">About Us</h1>
+          <p className="text-lg text-gray-900 mt-2">
+            Finanzy is your source for financial knowledge and independence.
+          </p>
         </div>
-        <hr className="border-t border-blue-500 my-4" />
-        <div className="bg-blue-900 text-white p-6 rounded-lg flex flex-col lg:flex-row items-center">
-          <div>
-            <h2 className="text-2xl font-bold mb-4">
-              Exciting Times Ahead! 🚀
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
+          {/* ABOUT */}
+          <div className="bg-gradient-to-b from-blue-400 to-blue-600 p-6 rounded-lg shadow-md">
+            <FaRegLightbulb className="text-5xl text-blue-900 mb-4 mx-auto" />
+            <h2 className="text-2xl font-semibold text-blue-900 text-center mb-4">
+              About
             </h2>
-            <p className="text-lg mb-4">
-              I am thrilled to announce a milestone in the finance world: the
-              Nifty 50 has reached 20,000 points! 📈🙌
+            <p className="text-lg text-gray-200">
+              Finanzy is a newsletter where you can dive into financial
+              education, financial literacy, financial news, and business
+              updates. We are dedicated to providing top-class personal finance
+              knowledge to the public and making them financially independent.
             </p>
-            <p className="text-lg mb-4">
-              This remarkable accomplishment not only demonstrates the
-              resilience and robustness of our economy but also showcases the
-              combined efforts, innovation, and determination of all
-              individuals, businesses, investors, and traders who have
-              contributed to this incredible journey.
+          </div>
+
+          {/* MISSION */}
+          <div className="bg-gradient-to-b from-blue-400 to-blue-600 p-6 rounded-lg shadow-md">
+            <FaChartPie className="text-5xl text-blue-900 mb-4 mx-auto" />
+            <h2 className="text-2xl font-semibold text-blue-900 text-center mb-4">
+              Mission
+            </h2>
+            <p className="text-lg text-gray-200">
+              At Finanzy, we are passionate about helping our readers achieve
+              financial independence. We aim to give them the knowledge and
+              tools to manage their money effectively, invest wisely, and plan
+              for their future. Our goal is to empower individuals to take
+              control of their financial well-being and build a solid foundation
+              for long-term financial success.
             </p>
-            <p className="text-lg mb-4">
-              It is a testament to the strength of the markets, the resilient
-              spirit of our nation, and the boundless potential that lies ahead.
-              As we find ourselves on the brink of this occasion, let us not
-              forget that it represents more than a number displayed on a
-              screen; it symbolizes progress, prosperity, and infinite
-              possibilities.
-            </p>
-            <p className="text-lg mb-4">
-              This milestone serves as a reminder that in the realm of finance,
-              there are no limits – it merely marks the start of something. Let
-              us remain dedicated to making investment choices, nurturing
-              innovation, and cultivating an environment where opportunities
-              continue to flourish.
-            </p>
-            <p className="text-lg mb-4">
-              It's no longer a dream. It's history from where the real game
-              begins. 📈📈
-            </p>
-            <p className="text-lg">
-              Congratulations to all those who have played a role in this
-              journey!
+          </div>
+
+          {/* VISION */}
+          <div className="bg-gradient-to-b from-blue-400 to-blue-600 p-6 rounded-lg shadow-md">
+            <FaBullseye className="text-5xl text-blue-900 mb-4 mx-auto" />
+            <h2 className="text-2xl font-semibold text-blue-900 text-center mb-4">
+              Vision
+            </h2>
+            <p className="text-lg text-gray-200">
+              "To be the trusted source of financial insights, empowering our
+              readers with the knowledge to make informed decisions and achieve
+              financial success.”
             </p>
           </div>
         </div>
@@ -60,4 +63,4 @@ const AboutPage = () => {
   );
 };
 
-export default AboutPage;
+export default AboutUs;
