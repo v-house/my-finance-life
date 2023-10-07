@@ -1,6 +1,6 @@
 export const blogPosts = [
   {
-    id: "650bd8c497fdad1309ab167fr",
+    id: "650bd8c497fdad1309ab167f",
     slug: "650bd8c497fdad1309ab167f",
     title: "Finanzy",
     tags: ["Finanzy", "Introduction"],

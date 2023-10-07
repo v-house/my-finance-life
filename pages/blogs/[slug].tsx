@@ -2,7 +2,6 @@ import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { blogPosts } from "../../data/blogPosts";
-import { FaLinkedin, FaInstagram, FaFacebook } from "react-icons/fa";
 
 // Interface for a comment
 interface Comment {
@@ -24,6 +23,12 @@ const BlogPost = () => {
   const blogPost = blogPosts.find((post) => post.slug === slug);
 
   const [apiResponse, setApiResponse] = useState<ApiResponse | null>(null);
+
+  const [newComment, setNewComment] = useState<Comment>({
+    name: "",
+    date: "",
+    comment: "",
+  });
 
   useEffect(() => {
     const fetchComments = async (blogPostId: string) => {
@@ -47,6 +52,35 @@ const BlogPost = () => {
   }
 
   const comments = apiResponse?.comments || [];
+
+  const handleCommentChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value } = e.target;
+    setNewComment((prevComment) => ({
+      ...prevComment,
+      [name]: value,
+      date: new Date().toLocaleDateString(),
+    }));
+  };
+
+  const handleCommentSubmit = async () => {
+    const postt_comment = {
+      blogPostId: slug,
+      comment: newComment.comment,
+      name: newComment.name,
+      date: newComment.date,
+    };
+    try {
+      // Send the new comment to your server for processing and storage
+      const response = await axios.post(`/api/comments`, postt_comment);
+
+      setNewComment({ name: "", date: "", comment: "" });
+      console.log(response);
+    } catch (error) {
+      console.error("Error submitting comment:", error);
+    }
+  };
 
   return (
     <div className="bg-blue-100 py-12">
@@ -170,6 +204,47 @@ const BlogPost = () => {
                 ))}
               </ul>
             )}
+          </div>
+          <div className="mt-4 p-4 bg-white rounded-lg shadow-md">
+            <h3 className="text-2xl font-semibold mb-2">Post a Comment</h3>
+            <div className="mb-4">
+              <label
+                htmlFor="name"
+                className="block text-gray-700 font-semibold"
+              >
+                Your Name
+              </label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                value={newComment.name}
+                onChange={handleCommentChange}
+                className="w-full px-3 py-2 border rounded-lg border-blue-800 focus:outline-none focus:border-blue-500"
+              />
+            </div>
+            <div className="mb-4">
+              <label
+                htmlFor="comment"
+                className="block text-gray-700 font-semibold"
+              >
+                Comment
+              </label>
+              <textarea
+                id="comment"
+                name="comment"
+                rows={4}
+                value={newComment.comment}
+                onChange={handleCommentChange}
+                className="w-full px-3 py-2 border rounded-lg border-blue-800 focus:outline-none focus:border-blue-500"
+              />
+            </div>
+            <button
+              onClick={handleCommentSubmit}
+              className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition duration-300 ease-in-out"
+            >
+              Post Comment
+            </button>
           </div>
         </div>
       </div>
