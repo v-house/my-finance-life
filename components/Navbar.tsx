@@ -9,7 +9,7 @@ const Navbar = () => {
       <div className="container mx-auto flex justify-between items-center">
         <div className="flex items-center space-x-2">
           <Image
-            src="/full_logo.jpg"
+            src="/full_logo.png"
             alt="Logo"
             width={160}
             height={100}
