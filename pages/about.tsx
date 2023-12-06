@@ -3,8 +3,8 @@ import React from "react";
 const trial = () => {
   return (
     <div>
-      <section className="py-20 bg-white">
-        <div className="flex flex-col px-8 mx-auto space-y-12 max-w-7xl xl:px-12">
+      <section className="py-8 lg:py-20 bg-white">
+        <div className="flex flex-col px-8 mx-auto space-y-6 lg:space-y-12 max-w-7xl xl:px-12">
           <div className="relative">
             <h2 className="w-full text-3xl font-bold text-center sm:text-4xl md:text-5xl">
               About Us

@@ -6,8 +6,8 @@ const Footer = () => {
   return (
     <>
       <div className="relative bg-gray-600">
-        <div className="bg-gray-300 py-4 text-center mx-2 lg:mx-6 rounded-md shadow-2xl relative transform translate-y-4 z-10">
-          <p className="font-extrabold">
+        <div className="bg-gray-300 py-4 text-center mx-2 lg:mx-6 rounded-md relative transform translate-y-4 z-10 text-xs md:text-sm">
+          <p className="font-bold">
             Contact us at:{" "}
             <a href="mailto:touchwith@finanzy.in" className="text-blue-900">
               touchwith@finanzy.in
@@ -21,7 +21,9 @@ const Footer = () => {
             </div>
             <div>
               <h4 className="text-2xl font-semibold">Finanzy</h4>
-              <h6 className="text-sm">A financial radio for a better world</h6>
+              <h6 className="text-xs lg:text-sm">
+                A financial radio for a better world
+              </h6>
             </div>
           </div>
           <div className="flex gap-1 lg:gap-4 items-center">

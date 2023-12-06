@@ -3,8 +3,8 @@ import { blogPosts } from "../data/blogPosts";
 
 const Home = () => {
   return (
-    <div className="py-20 bg-white">
-      <div className="px-8 mx-auto space-y-12 max-w-7xl xl:px-12">
+    <div className="py-8 lg:py-20 bg-white">
+      <div className="px-8 mx-auto space-y-4 lg:space-y-12 max-w-7xl xl:px-12">
         <div className="relative">
           <h2 className="w-full text-3xl font-bold text-center sm:text-4xl md:text-5xl">
             Blogs
