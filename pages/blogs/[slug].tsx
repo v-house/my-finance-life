@@ -84,8 +84,8 @@ const BlogPost = () => {
 
   return (
     <div className="bg-blue-100 py-12">
-      <div className="container mx-auto px-4">
-        <div className="bg-white rounded-lg shadow-md">
+      <div className="mx-auto px-4">
+        <div className="bg-white rounded-lg">
           <div className="p-4 lg:flex">
             <div className="lg:w-2/3">
               <div className="mb-4 flex flex-wrap gap-2">

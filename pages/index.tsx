@@ -3,9 +3,16 @@ import { blogPosts } from "../data/blogPosts";
 
 const Home = () => {
   return (
-    <div>
-      <div className="mx-auto my-8 p-2 lg:p-4">
-        <h1 className="text-3xl font-semibold mb-4 mx-2">Blog Posts</h1>
+    <div className="py-20 bg-white">
+      <div className="px-8 mx-auto space-y-12 max-w-7xl xl:px-12">
+        <div className="relative">
+          <h2 className="w-full text-3xl font-bold text-center sm:text-4xl md:text-5xl">
+            Blogs
+          </h2>
+          <p className="w-full py-8 mx-auto -mt-2 text-lg text-center text-gray-700 intro sm:max-w-3xl">
+            Explore Our Insightful Blog Collection.
+          </p>
+        </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 lg:gap-4">
           {blogPosts.map((post) => (
             <div

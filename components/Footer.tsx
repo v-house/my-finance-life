@@ -5,8 +5,8 @@ import Image from "next/image";
 const Footer = () => {
   return (
     <>
-      <div className="relative">
-        <div className="py-4 bg-sky-200 text-center mx-1 lg:mx-6 rounded-md shadow-2xl relative transform translate-y-4 z-10 mt-4">
+      <div className="relative bg-gray-600">
+        <div className="bg-gray-300 py-4 text-center mx-2 lg:mx-6 rounded-md shadow-2xl relative transform translate-y-4 z-10">
           <p className="font-extrabold">
             Contact us at:{" "}
             <a href="mailto:touchwith@finanzy.in" className="text-blue-900">
@@ -14,7 +14,7 @@ const Footer = () => {
             </a>
           </p>
         </div>
-        <footer className="bg-blue-900 text-white p-1 lg:p-6 pt-4 flex items-center justify-between relative">
+        <footer className="bg-gray-700 text-white p-1 lg:p-6 pt-4 flex items-center justify-between relative">
           <div className="flex items-center mt-2">
             <div className="mr-4">
               <Image src="/logo.jpeg" alt="Logo" width={64} height={64} />
