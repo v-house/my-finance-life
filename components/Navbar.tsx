@@ -49,10 +49,12 @@ const Navbar = () => {
             <Link href="/about" legacyBehavior>
               <a className="mx-auto flex items-center space-x-4 hover:text-white">
                 <div className="shrink-0">
-                  <img
-                    className="h-6 w-6 lg:h-12 lg:w-12 rounded-full"
-                    src="./logo.jpeg"
+                  <Image
+                    src="/logo.jpeg"
+                    width={200}
+                    height={200}
                     alt=""
+                    className="h-6 w-6 lg:h-12 lg:w-12 rounded-full"
                   />
                 </div>
                 <div>

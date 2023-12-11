@@ -2,65 +2,58 @@ import { ObjectId } from "mongodb";
 import clientPromise from "../../lib/mongodb";
 
 export default async function handler(req, res) {
-  const { blogPostId } = req.query;
+  const { tag } = req.body;
 
-  if (!ObjectId.isValid(blogPostId)) {
-    res.status(400).json({ message: "Invalid blogPostId" });
+  if (!tag) {
+    res.status(400).json({ message: "Tag is required" });
     return;
   }
 
+  const client = await clientPromise;
+  const db = client.db("financehelp");
+
   if (req.method === "GET") {
     try {
-      const client = await clientPromise;
-      const db = client.db("financehelp");
-
-      const blogPost = await db
+      const blogPosts = await db
         .collection("blogs")
-        .findOne({ _id: ObjectId(blogPostId) });
+        .find({ tag: tag })
+        .toArray();
 
-      if (!blogPost) {
-        res.status(404).json({ message: "Blog post not found" });
+      if (!blogPosts || blogPosts.length === 0) {
+        res
+          .status(404)
+          .json({ message: "No blog posts found with the given tag" });
         return;
       }
 
-      res.status(200).json(blogPost);
+      res.status(200).json(blogPosts);
     } catch (error) {
-      console.error("Error fetching blog post:", error);
+      console.error("Error fetching blog posts:", error);
       res.status(500).json({ message: "Internal server error" });
     }
   } else if (req.method === "POST") {
-    const { name, date, comment } = req.body;
+    const { name, text, date, tag } = req.body;
 
-    if (!name || !date || !comment) {
-      res.status(400).json({ message: "Name, date, and comment are required" });
+    if (!name || !text || !date) {
+      res.status(400).json({ message: "Name, text, and date are required" });
       return;
     }
 
     try {
-      const client = await clientPromise;
-      const db = client.db("financehelp");
+      const result = await db.collection("blogs").insertOne({
+        name: name,
+        body: text,
+        date: date,
+        tag: tag,
+      });
 
-      // Update the existing blog post document by appending the new comment
-      const result = await db.collection("blogs").updateOne(
-        { _id: ObjectId(blogPostId) },
-        {
-          $push: {
-            comments: {
-              name,
-              date,
-              comment,
-            },
-          },
-        }
-      );
-
-      if (result.matchedCount === 1 && result.modifiedCount === 1) {
-        res.status(201).json({ message: "Comment posted successfully" });
+      if (result.insertedCount === 1) {
+        res.status(201).json({ message: "Blog post added successfully" });
       } else {
-        res.status(500).json({ message: "Failed to post comment" });
+        res.status(500).json({ message: "Failed to add blog post" });
       }
     } catch (error) {
-      console.error("Error posting comment:", error);
+      console.error("Error adding blog post:", error);
       res.status(500).json({ message: "Internal server error" });
     }
   } else {
