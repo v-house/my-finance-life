@@ -56,6 +56,31 @@ export const blogPosts = [
     imagedescription: ["Finanzy - A financial radio for a better world."],
   },
   {
+    id: "2",
+    slug: "2",
+    title: "Muharat Trading",
+    tags: ["Finanzy", "Event", "November 12, 2023"],
+    banner: "/muharattrading.jpeg",
+    writer: "Finanzy",
+    writerDescription: "A financial radio for a better world.",
+    date: "October 28, 2023",
+    subTitle:
+      "The much-awaited Muharat Trading for 2023 is just around the corner, scheduled for November 12 - It starts at 6 PM and ends at 7.15 PM, which Includes a 15-minute pre-market session.",
+    description: [
+      {
+        heading: "About Event",
+        subDescriptions: [
+          "Muharat Trading, a symbolic ritual in the Indian financial market, is a special trading session on the day of Diwali, the festival of lights. Traders and investors participate in this session with enthusiasm, hoping to initiate trades that will bring prosperity and wealth in the upcoming year.",
+          "During the last two Mahurat Trading sessions, the stock markets have closed in the green on the Muhurat trading day. Both the Sensex and the Nifty gained 0.88 percent each on Muhurat trading in 2022, while in 2021, the two benchmarks moved up by 0.49 percent each.",
+          "As we approach the 2023 Muharat Trading on November 12, investors to maintain a balanced approach and focus on long-term investment strategies.",
+          "Stay tuned for our post-trading analysis, where we will delve into the highlights and key takeaways from the 2023 Muharat Trading session.",
+        ],
+      },
+    ],
+    images: ["/muharattrading.jpeg"],
+    imagedescription: ["Muharat Trading | Finanzy"],
+  },
+  {
     id: "1",
     slug: "1",
     title: "Finanzy",
