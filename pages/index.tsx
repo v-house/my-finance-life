@@ -13,11 +13,11 @@ const Home = () => {
             Explore Our Insightful Blog Collection.
           </p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 lg:gap-4">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-2 lg:gap-4">
           {blogPosts.map((post) => (
             <div
               key={post.id}
-              className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-transform transform hover:scale-105 relative"
+              className="bg-white hover:bg-gray-200 rounded-lg overflow-hidden shadow-md relative"
             >
               <Link href={`/blogs/${post.slug}`} legacyBehavior>
                 <a>

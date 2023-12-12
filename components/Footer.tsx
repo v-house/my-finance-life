@@ -1,4 +1,4 @@
-import { FaLinkedin } from "react-icons/fa";
+import { FaLinkedin, FaWhatsapp } from "react-icons/fa";
 import { FiMail } from "react-icons/fi";
 import Image from "next/image";
 
@@ -27,6 +27,15 @@ const Footer = () => {
             </div>
           </div>
           <div className="flex gap-1 lg:gap-4 items-center">
+            <a
+              href="https://whatsapp.com/channel/0029VaFrrSF7dmeRbESt4R1A"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="Contact Us via Whatsapp"
+              className="text-3xl scale-105 text-white transition duration-300 ease-in-out"
+            >
+              <FaWhatsapp />
+            </a>
             <a
               href="mailto:touchwith@finanzy.in"
               target="_blank"
