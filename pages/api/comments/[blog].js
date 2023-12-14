@@ -1,4 +1,4 @@
-import clientPromise from "../../../lib/mongodb.ts";
+import clientPromise from "../../../lib/mongodb";
 
 export default async function handler(req, res) {
   if (req.method === "GET") {
@@ -20,6 +20,29 @@ export default async function handler(req, res) {
       // console.log(e);
     }
   }
+
+  if (req.method === "POST") {
+    const comment = req.body;
+
+    try {
+      const client = await clientPromise;
+      const db = client.db("financehelp");
+
+      const result = await db.collection("blogs").insertOne(comment);
+      if (result.acknowledged) {
+        return res
+          .status(201)
+          .json({ message: "Comment created successfully" });
+      } else {
+        return res.status(500).json({ message: "Failed to create comment" });
+      }
+    } catch (error) {
+      console.error("Error creating comment:", error);
+      return res.status(500).json({ message: "Internal server error" });
+    }
+  }
+
+  return res.status(405).json({ message: "Method Not Allowed" });
 }
 
 // import { ObjectId } from "mongodb";
