@@ -34,15 +34,7 @@ function formatCommentTime(commentTime: string): string {
 const BlogPost = () => {
   const router = useRouter();
   const { slug } = router.query;
-  const [comments, setComments] = useState<Comment[]>([
-    {
-      _id: { $oid: "1" },
-      tag: "1",
-      name: "Finanzy",
-      body: "Comment Section is still under testing procedure.",
-      time: "December 11, 2023 - 20:22 IST",
-    },
-  ]);
+  const [comments, setComments] = useState<Comment[]>([]);
   const [newComment, setNewComment] = useState({
     name: "",
     body: "",
