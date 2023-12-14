@@ -15,22 +15,6 @@ interface Comment {
   time: string;
 }
 
-function formatCommentTime(commentTime: string): string {
-  const options: Intl.DateTimeFormatOptions = {
-    weekday: "long",
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-    hour: "numeric",
-    minute: "numeric",
-    second: "numeric",
-    timeZone: "Asia/Kolkata",
-  };
-
-  const formattedTime = new Date(commentTime).toLocaleString("en-IN", options);
-  return formattedTime;
-}
-
 const BlogPost = () => {
   const router = useRouter();
   const { slug } = router.query;
@@ -40,20 +24,20 @@ const BlogPost = () => {
     body: "",
   });
   const blogPost = blogPosts.find((post) => post.slug === slug);
-  const fetchData = async () => {
-    try {
-      const response = await fetch(`/api/comments/${slug}`);
-      const data = await response.json();
-      console.log(data);
-      if (Array.isArray(data)) {
-        setComments(data);
-      } else {
-      }
-    } catch (error) {}
-  };
+
   useEffect(() => {
     console.log("Slug is ", slug);
-
+    const fetchData = async () => {
+      try {
+        const response = await fetch(`/api/comments/${slug}`);
+        const data = await response.json();
+        console.log(data);
+        if (Array.isArray(data)) {
+          setComments(data);
+        } else {
+        }
+      } catch (error) {}
+    };
     fetchData();
   }, [slug]);
 
@@ -73,11 +57,41 @@ const BlogPost = () => {
         name: "",
         body: "",
       });
+      const fetchData = async () => {
+        try {
+          const response = await fetch(`/api/comments/${slug}`);
+          const data = await response.json();
+          console.log(data);
+          if (Array.isArray(data)) {
+            setComments(data);
+          } else {
+          }
+        } catch (error) {}
+      };
       fetchData();
     } catch (e) {
       console.log("Axios Error: ", e);
     }
   };
+
+  function formatCommentTime(commentTime: string): string {
+    const options: Intl.DateTimeFormatOptions = {
+      weekday: "long",
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+      hour: "numeric",
+      minute: "numeric",
+      second: "numeric",
+      timeZone: "Asia/Kolkata",
+    };
+
+    const formattedTime = new Date(commentTime).toLocaleString(
+      "en-IN",
+      options
+    );
+    return formattedTime;
+  }
 
   return (
     <div className="bg-blue-100 py-4 lg:py-12">
