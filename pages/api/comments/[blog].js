@@ -13,9 +13,9 @@ export default async function handler(req, res) {
         .find({ tag: blog })
         .toArray();
       // console.log(comments);
-      res.status(200).json(comments);
+      return res.status(200).json(comments);
     } catch (e) {
-      res.status(200).json({});
+      return res.status(200).json({});
       // res.status(500).json({ message: "Internal server error" });
       // console.log(e);
     }
