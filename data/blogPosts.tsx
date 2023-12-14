@@ -1,7 +1,7 @@
 export const blogPosts = [
   {
-    id: "650bd8c497fdad1309ab167ft",
-    slug: "650bd8c497fdad1309ab167ft",
+    id: "1",
+    slug: "1",
     title: "Muharat Trading",
     tags: ["Finanzy", "Event", "November 12, 2023"],
     banner: "/muharattrading.jpeg",
@@ -25,8 +25,8 @@ export const blogPosts = [
     imagedescription: ["Muharat Trading | Finanzy"],
   },
   {
-    id: "650bd8c497fdad1309ab167f",
-    slug: "650bd8c497fdad1309ab167f",
+    id: "2",
+    slug: "2",
     title: "Finanzy",
     tags: ["Finanzy", "Introduction"],
     banner: "/about_image.jpeg",

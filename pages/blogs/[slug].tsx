@@ -96,7 +96,7 @@ const BlogPost = () => {
             <h2 className="text-3xl font-bold text-white mb-4">Comments:</h2>
 
             {comments.length === 0 ? (
-              <p className="text-gray-300">No comments yet.</p>
+              <p className="text-gray-300 my-4">No comments yet.</p>
             ) : (
               comments.map((comment, index) => (
                 <div
