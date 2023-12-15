@@ -24,37 +24,8 @@ const Navbar = () => {
             </Link>
             <div className="flex gap-1 lg:gap-4 items-center">
               <a
-                href="https://whatsapp.com/channel/0029VaFrrSF7dmeRbESt4R1A"
-                target="_blank"
-                rel="noopener noreferrer"
-                title="Contact Us via Whatsapp"
-                className="text-2xl lg:text-3xl lg:scale-105 bg-gray-700 text-white p-1 rounded-lg"
-              >
-                <FaWhatsapp />
-              </a>
-              <a
-                href="mailto:touchwith@finanzy.in"
-                target="_blank"
-                rel="noopener noreferrer"
-                title="Contact Us via Email"
-                className="text-2xl lg:text-3xl lg:scale-105 bg-gray-700 text-white p-1 rounded-lg"
-              >
-                <FiMail />
-              </a>
-              <a
-                href="https://www.linkedin.com/company/finanzy/"
-                target="_blank"
-                rel="noopener noreferrer"
-                title="LinkedIn"
-                className="text-2xl lg:text-3xl lg:scale-105 bg-gray-700 text-white p-1 rounded-lg"
-              >
-                <FaLinkedin />
-              </a>
-              <a
                 href="/profile"
-                target="_blank"
-                rel="noopener noreferrer"
-                title="LinkedIn"
+                title="Profile"
                 className="text-2xl lg:text-3xl lg:scale-105 bg-gray-700 text-white p-1 rounded-lg"
               >
                 <CgProfile />

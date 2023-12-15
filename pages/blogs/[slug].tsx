@@ -29,12 +29,15 @@ const BlogPost = () => {
     name: "",
     body: "",
   });
+  const [loadingComments, setLoadingComments] = useState(true);
+  const [loadingyou, setLoadingyou] = useState(false);
   const blogPost = blogPosts.find((post) => post.slug === slug);
 
   useEffect(() => {
     console.log("Slug is ", slug);
     const fetchData = async () => {
       try {
+        setLoadingComments(true);
         const response = await fetch(`/api/comments/${slug}`);
         const data = await response.json();
         console.log(data);
@@ -42,7 +45,10 @@ const BlogPost = () => {
           setComments(data);
         } else {
         }
-      } catch (error) {}
+      } catch (error) {
+      } finally {
+        setLoadingComments(false);
+      }
     };
     fetchData();
 
@@ -65,6 +71,7 @@ const BlogPost = () => {
 
   const handleCommentSubmit = async (e: { preventDefault: () => void }) => {
     e.preventDefault();
+    setLoadingyou(true);
     const today = new Date();
     const comment = {
       name: commentor,
@@ -88,9 +95,13 @@ const BlogPost = () => {
             setComments(data);
           } else {
           }
-        } catch (error) {}
+        } catch (error) {
+        } finally {
+          setLoadingComments(false);
+        }
       };
       fetchData();
+      setLoadingyou(false);
     } catch (e) {
       console.log("Axios Error: ", e);
     }
@@ -122,8 +133,12 @@ const BlogPost = () => {
           <Article blogPost={blogPost} />
           <div className="mx-4 py-6 px-4 bg-gradient-to-r from-purple-700 to-blue-900 rounded-lg shadow-lg">
             <h2 className="text-3xl font-bold text-white mb-4">Comments:</h2>
-            {comments.length === 0 ? (
-              <p className="text-gray-300 my-4">No comments yet.</p>
+            {loadingComments ? (
+              <p className="text-gray-300 my-4">Loading comments...</p>
+            ) : comments.length === 0 ? (
+              <p className="text-gray-300 my-4">
+                No comments yet. Reload to fetch latest comments.
+              </p>
             ) : (
               comments.map((comment, index) => (
                 <div
@@ -192,8 +207,9 @@ const BlogPost = () => {
                 <button
                   type="submit"
                   className="mt-4 px-6 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 focus:outline-none"
+                  disabled={loadingyou}
                 >
-                  Post
+                  {loadingComments ? "Posting..." : "Post"}
                 </button>
               </form>
             ) : (
