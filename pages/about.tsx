@@ -17,8 +17,8 @@ const trial = () => {
             <div className="flex items-center mb-8 sm:w-1/2 md:w-5/12 sm:order-last">
               <img
                 className="rounded-lg shadow-xl"
-                src="./about11.jpg"
-                alt=""
+                src="./v1.jpeg"
+                alt="Who we are"
               />
             </div>
             <div className="flex flex-col justify-center mt-5 mb-8 md:mt-0 sm:w-1/2 md:w-7/12 sm:pr-16">
@@ -39,11 +39,7 @@ const trial = () => {
           </div>
           <div className="flex flex-col mb-8 animated fadeIn sm:flex-row">
             <div className="flex items-center mb-8 sm:w-1/2 md:w-5/12">
-              <img
-                className="rounded-lg shadow-xl"
-                src="./about_image1.jpg"
-                alt=""
-              />
+              <img className="rounded-lg shadow-xl" src="./v2.jpeg" alt="Aim" />
             </div>
             <div className="flex flex-col justify-center mt-5 mb-8 md:mt-0 sm:w-1/2 md:w-7/12 sm:pl-16">
               <p className="mb-2 text-sm font-semibold leading-none text-left text-indigo-600 uppercase">
@@ -66,8 +62,8 @@ const trial = () => {
             <div className="flex items-center mb-8 sm:w-1/2 md:w-5/12 sm:order-last">
               <img
                 className="rounded-lg shadow-xl"
-                src="https://www.provise.com/wp-content/uploads/2020/07/AdobeStock_331489342.jpeg"
-                alt=""
+                src="./v3.jpeg"
+                alt="Vision"
               />
             </div>
             <div className="flex flex-col justify-center mt-5 mb-8 md:mt-0 sm:w-1/2 md:w-7/12 sm:pr-16">

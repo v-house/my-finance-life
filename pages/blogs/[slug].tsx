@@ -126,6 +126,10 @@ const BlogPost = () => {
     return formattedTime;
   }
 
+  function handleReload(): void {
+    router.reload();
+  }
+
   return (
     <div className="bg-blue-100 py-4 lg:py-12">
       <div className="mx-auto px-4">
@@ -136,9 +140,17 @@ const BlogPost = () => {
             {loadingComments ? (
               <p className="text-gray-300 my-4">Loading comments...</p>
             ) : comments.length === 0 ? (
-              <p className="text-gray-300 my-4">
-                No comments yet. Reload to fetch latest comments.
-              </p>
+              <>
+                <p className="text-gray-300">
+                  No comments yet. Reload to fetch latest comments.
+                </p>
+                <button
+                  onClick={handleReload}
+                  className="text-white underline mb-4"
+                >
+                  Reload Page
+                </button>
+              </>
             ) : (
               comments.map((comment, index) => (
                 <div
