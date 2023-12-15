@@ -3,6 +3,8 @@ import { blogPosts } from "../../data/blogPosts";
 import Article from "./Article";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { getSession, signIn } from "next-auth/react";
+import { FcGoogle } from "react-icons/fc";
 
 // Define the interface for a comment
 interface Comment {
@@ -18,6 +20,10 @@ interface Comment {
 const BlogPost = () => {
   const router = useRouter();
   const { slug } = router.query;
+  const [name, setName] = useState(false);
+  const [emailu, setEmailu] = useState("");
+  const [isrc, setIsrc] = useState("");
+  const [commentor, setCommentor] = useState("");
   const [comments, setComments] = useState<Comment[]>([]);
   const [newComment, setNewComment] = useState({
     name: "",
@@ -39,13 +45,29 @@ const BlogPost = () => {
       } catch (error) {}
     };
     fetchData();
+
+    const fetchUserName = async () => {
+      const session = await getSession();
+      if (session?.user?.name) {
+        setName(true);
+        setCommentor(session.user.name);
+      }
+      if (session?.user?.email) {
+        setEmailu(session.user.email);
+      }
+      if (session?.user?.image) {
+        setName(true);
+        setIsrc(session.user.image);
+      }
+    };
+    fetchUserName();
   }, [slug]);
 
   const handleCommentSubmit = async (e: { preventDefault: () => void }) => {
     e.preventDefault();
     const today = new Date();
     const comment = {
-      name: newComment.name,
+      name: commentor,
       body: newComment.body,
       time: formatCommentTime(today.toUTCString()),
       tag: slug,
@@ -100,7 +122,6 @@ const BlogPost = () => {
           <Article blogPost={blogPost} />
           <div className="mx-4 py-6 px-4 bg-gradient-to-r from-purple-700 to-blue-900 rounded-lg shadow-lg">
             <h2 className="text-3xl font-bold text-white mb-4">Comments:</h2>
-
             {comments.length === 0 ? (
               <p className="text-gray-300 my-4">No comments yet.</p>
             ) : (
@@ -126,43 +147,67 @@ const BlogPost = () => {
               ))
             )}
 
-            <form onSubmit={handleCommentSubmit} className="">
-              <div className="text-xl font-bold text-white mb-4">
-                Write a Comment
-              </div>
-              <div className="grid grid-cols-1 gap-4">
-                <input
-                  type="text"
-                  placeholder="Your Name"
-                  value={newComment.name}
-                  onChange={(e) =>
-                    setNewComment({ ...newComment, name: e.target.value })
-                  }
-                  maxLength={30}
-                  minLength={7}
-                  required
-                  className="p-2 border border-white rounded-md focus:outline-none focus:border-blue-300"
-                />
-                <textarea
-                  placeholder="Your Comment"
-                  value={newComment.body}
-                  onChange={(e) =>
-                    setNewComment({ ...newComment, body: e.target.value })
-                  }
-                  minLength={1}
-                  maxLength={1000}
-                  required
-                  rows={4}
-                  className="p-2 border border-white rounded-md focus:outline-none focus:border-blue-300"
-                />
-              </div>
-              <button
-                type="submit"
-                className="mt-4 px-6 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 focus:outline-none"
+            {name ? (
+              <form
+                onSubmit={handleCommentSubmit}
+                className="bg-gradient-to-r from-purple-400 to-purple-500 p-6 rounded-md shadow-md"
               >
-                Post
-              </button>
-            </form>
+                <div className="text-2xl font-bold text-white mb-4">
+                  Write a Comment
+                </div>
+                <div className="flex flex-col">
+                  <div className="flex items-center mb-4">
+                    <img
+                      src={isrc}
+                      alt="Your profile image"
+                      className="w-12 h-12 rounded-full mr-4"
+                    />
+                    <div className="font-semibold line-clamp-2">
+                      Logged In as {emailu}
+                    </div>
+                  </div>
+                  <div className="flex flex-col">
+                    <input
+                      type="text"
+                      value={commentor}
+                      disabled
+                      required
+                      placeholder="Your Name"
+                      className="p-2 rounded-md mb-2"
+                    />
+                    <textarea
+                      placeholder="Your Comment"
+                      value={newComment.body}
+                      onChange={(e) =>
+                        setNewComment({ ...newComment, body: e.target.value })
+                      }
+                      minLength={1}
+                      maxLength={1000}
+                      required
+                      rows={4}
+                      className="p-2 border border-white rounded-md focus:outline-none focus:border-blue-300"
+                    />
+                  </div>
+                </div>
+                <button
+                  type="submit"
+                  className="mt-4 px-6 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 focus:outline-none"
+                >
+                  Post
+                </button>
+              </form>
+            ) : (
+              <div className="text-white">
+                Sign in to comment
+                <button
+                  onClick={() => signIn("google")}
+                  className="mt-4 px-6 py-2 bg-sky-100 text-blue-500 rounded-md flex items-center"
+                >
+                  <FcGoogle />
+                  <div className="ml-2">Sign in</div>
+                </button>
+              </div>
+            )}
           </div>
         </div>
       </div>

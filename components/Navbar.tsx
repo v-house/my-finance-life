@@ -3,6 +3,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { FaLinkedin, FaWhatsapp } from "react-icons/fa";
 import { FiMail } from "react-icons/fi";
+import { CgProfile } from "react-icons/cg";
 
 const Navbar = () => {
   const { asPath } = useRouter();
@@ -48,6 +49,15 @@ const Navbar = () => {
                 className="text-2xl lg:text-3xl lg:scale-105 bg-gray-700 text-white p-1 rounded-lg"
               >
                 <FaLinkedin />
+              </a>
+              <a
+                href="/profile"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="LinkedIn"
+                className="text-2xl lg:text-3xl lg:scale-105 bg-gray-700 text-white p-1 rounded-lg"
+              >
+                <CgProfile />
               </a>
             </div>
           </div>
