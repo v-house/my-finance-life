@@ -23,7 +23,7 @@ export default function Article(props: { blogPost: any }) {
             <div className="flex items-center m-2">
               <div className="rounded-full h-8 w-8 bg-blue-500 flex items-center justify-center">
                 <span className="text-white text-xl font-bold">
-                  {props.blogPost?.writer[0].toUpperCase()}
+                  {props.blogPost?.writer.toUpperCase()[0]}
                 </span>
               </div>
               <p className="ml-2 font-semibold">{props.blogPost?.writer}</p>

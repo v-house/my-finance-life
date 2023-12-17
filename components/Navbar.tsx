@@ -1,13 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { FaLinkedin, FaWhatsapp } from "react-icons/fa";
-import { FiMail } from "react-icons/fi";
 import { CgProfile } from "react-icons/cg";
 
 const Navbar = () => {
-  const { asPath } = useRouter();
-
   return (
     <>
       <nav className="bg-gray-300 p-2 px-4 lg:px-6 sticky top-0 z-10">
