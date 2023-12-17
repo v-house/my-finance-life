@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter } from "next/router";
+import { IoBuild } from "react-icons/io5";
 import { CgProfile } from "react-icons/cg";
 
 const Navbar = () => {
@@ -19,6 +19,13 @@ const Navbar = () => {
               </a>
             </Link>
             <div className="flex gap-1 lg:gap-4 items-center">
+              <a
+                href="/build"
+                title="Build"
+                className="text-2xl lg:text-3xl lg:scale-105 bg-gray-700 text-white p-1 rounded-lg"
+              >
+                <IoBuild />
+              </a>
               <a
                 href="/profile"
                 title="Profile"
