@@ -7,6 +7,8 @@ import { MdOpenInNew } from "react-icons/md";
 import Link from "next/link";
 import router from "next/router";
 import { IoWarning } from "react-icons/io5";
+import { getSession } from "next-auth/react";
+import { admins } from "./admins";
 
 const generateRandomId = () => {
   const characters =
@@ -31,6 +33,49 @@ interface Section {
 }
 
 export default function Build() {
+  const [email, setEmail] = useState("");
+  const [isLoading, setIsLoading] = useState(true);
+  useEffect(() => {
+    const fetchUserName = async () => {
+      const session = await getSession();
+      if (session?.user?.email) {
+        setEmail(session.user.email);
+      }
+      setIsLoading(false);
+    };
+
+    fetchUserName();
+  }, []);
+
+  if (isLoading) {
+    return (
+      <div className="flex items-center justify-center h-screen">
+        <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-blue-500"></div>
+      </div>
+    );
+  }
+
+  if (!(email in admins)) {
+    return (
+      <>
+        <div className="min-h-screen flex items-center justify-center bg-gray-300">
+          <div className="p-8 bg-white shadow-md rounded-md">
+            <h1 className="text-3xl text-red-500 font-bold mb-4">
+              Unauthorized Access
+            </h1>
+            <p className="text-gray-700 mb-4">
+              You are not authorized to access this page. Blogs can only be
+              managed by the admin.
+            </p>
+            <Link href="/" legacyBehavior>
+              <a className="text-blue-500 hover:underline">Go back to home</a>
+            </Link>
+          </div>
+        </div>
+      </>
+    );
+  }
+
   const [blog, setBlog] = useState({
     id: "",
     slug: "",
