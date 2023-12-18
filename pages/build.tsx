@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
 import Article from "./blogs/Article";
-import { MdAdd, MdDeleteForever } from "react-icons/md";
+import { MdAdd, MdDelete, MdDeleteForever } from "react-icons/md";
 import { TiTick } from "react-icons/ti";
 import { FaCopy } from "react-icons/fa";
 import { MdOpenInNew } from "react-icons/md";
 import Link from "next/link";
 import router from "next/router";
+import { IoWarning } from "react-icons/io5";
 
 const generateRandomId = () => {
   const characters =
@@ -19,6 +20,16 @@ const generateRandomId = () => {
   return randomId;
 };
 
+interface sect {
+  heading: string;
+  subDescriptions: string[];
+}
+
+interface Section {
+  heading: string;
+  subDescriptions: string[];
+}
+
 export default function Build() {
   const [blog, setBlog] = useState({
     id: "",
@@ -30,7 +41,7 @@ export default function Build() {
     writerDescription: "",
     date: "",
     subTitle: "",
-    description: [],
+    description: [] as Section[],
     images: [] as String[],
     imagedescription: [] as String[],
   });
@@ -141,6 +152,96 @@ export default function Build() {
       clearInterval(wait);
     };
   }, [save]);
+
+  const [csh, setCsh] = useState<sect>({ heading: "", subDescriptions: [] });
+
+  const handleAddHeading = () => {};
+
+  const [sections, setSections] = useState<Section[]>([]);
+  const [currentSection, setCurrentSection] = useState<Section>({
+    heading: "",
+    subDescriptions: [],
+  });
+
+  const handleAddDescription = () => {
+    setCurrentSection((prev) => ({
+      ...prev,
+      subDescriptions: [...prev.subDescriptions, ""],
+    }));
+  };
+
+  const handleDescriptionChange = (index: number, value: string) => {
+    setCurrentSection((prev) => {
+      const updatedDescriptions = [...prev.subDescriptions];
+      updatedDescriptions[index] = value;
+      return { ...prev, subDescriptions: updatedDescriptions };
+    });
+  };
+
+  const handleSectionChange = (value: string) => {
+    setCurrentSection((prev) => ({ ...prev, heading: value }));
+  };
+
+  const handleAddSection = () => {
+    setBlog({
+      ...blog,
+      description: [...blog.description, currentSection],
+    });
+    setSections((prev) => [...prev, currentSection]);
+    setCurrentSection({ heading: "", subDescriptions: [] });
+  };
+
+  const handleDeleteSection = (sectionIndex: number) => {
+    setSections((prev) => {
+      const updatedSections = [...prev];
+      const deletedSection = updatedSections.splice(sectionIndex, 1)[0];
+
+      setBlog((prevBlog) => {
+        const updatedBlog = { ...prevBlog };
+        updatedBlog.description = updatedBlog.description.filter(
+          (section) => section.heading !== deletedSection.heading
+        );
+        return updatedBlog;
+      });
+
+      return updatedSections;
+    });
+  };
+
+  const handleDeleteDescription = (sectionIndex: number, descIndex: number) => {
+    setSections((prev) => {
+      const updatedSections = [...prev];
+      const deletedDescription = updatedSections[
+        sectionIndex
+      ].subDescriptions.splice(descIndex, 1)[0];
+
+      setBlog((prevBlog) => {
+        const updatedBlog = { ...prevBlog };
+        updatedBlog.description[sectionIndex].subDescriptions =
+          updatedBlog.description[sectionIndex].subDescriptions.filter(
+            (desc) => desc !== deletedDescription
+          );
+        return updatedBlog;
+      });
+
+      return updatedSections;
+    });
+  };
+
+  const [isModalOpen, setModalOpen] = useState(false);
+
+  const handleEmpty = () => {
+    setModalOpen(true);
+  };
+
+  const handleConfirmDeactivate = () => {
+    localStorage.removeItem("blog");
+    window.location.reload();
+  };
+
+  const handleCloseModal = () => {
+    setModalOpen(false);
+  };
 
   return (
     <>
@@ -327,6 +428,83 @@ export default function Build() {
               />
             </div>
             <div className="mb-4">
+              <label className="">Section:</label>
+              <div className="flex items-center space-x-2">
+                <input
+                  type="text"
+                  placeholder="Section Heading"
+                  value={currentSection.heading}
+                  onChange={(e) => handleSectionChange(e.target.value)}
+                  className="w-full p-2 my-1 border rounded-md text-black"
+                />
+                <div>
+                  <button
+                    onClick={handleAddDescription}
+                    className="bg-blue-300 rounded-full p-2 text-gray-800"
+                  >
+                    <MdAdd />
+                  </button>
+                </div>
+              </div>
+              {currentSection.subDescriptions.map((description, index) => (
+                <textarea
+                  key={index}
+                  placeholder="Enter description"
+                  value={description}
+                  onChange={(e) =>
+                    handleDescriptionChange(index, e.target.value)
+                  }
+                  className="w-full p-2 mt-1 border rounded-md text-black"
+                />
+              ))}
+              <button
+                onClick={handleAddSection}
+                className="mt-2 bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600 focus:outline-none"
+              >
+                Add Section
+              </button>
+              <div className="mt-4">
+                <h2 className="text-lg font-bold mb-2">Sections:</h2>
+                <ul>
+                  {sections.map((section, sectionIndex) => (
+                    <li key={sectionIndex}>
+                      <div className="flex items-center justify-between">
+                        <h3 className="text-lg font-semibold">
+                          {section.heading}
+                        </h3>
+                        <button
+                          onClick={() => handleDeleteSection(sectionIndex)}
+                          className="bg-red-800 p-1 rounded-full"
+                        >
+                          <MdDelete />
+                        </button>
+                      </div>
+                      <ul>
+                        {section.subDescriptions.map((desc, descIndex) => (
+                          <li key={descIndex}>
+                            <div className="pl-4 flex items-center justify-between">
+                              {desc}
+                              <button
+                                onClick={() =>
+                                  handleDeleteDescription(
+                                    sectionIndex,
+                                    descIndex
+                                  )
+                                }
+                                className="text-red-500 p-1"
+                              >
+                                <MdDelete />
+                              </button>
+                            </div>
+                          </li>
+                        ))}
+                      </ul>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+            <div className="mb-4">
               <label className="">Images:</label>
               <div className="flex items-center space-x-2">
                 <input
@@ -381,6 +559,13 @@ export default function Build() {
               </div>
             </div>
           </div>
+          <button
+            onClick={handleEmpty}
+            className="text-red-600 text-lg flex items-center space-x-2 hover:text-white"
+          >
+            <IoWarning className="text-2xl" />
+            <div>Clear form completely</div>
+          </button>
         </div>
         <div className="bg-blue-100 py-4 lg:py-8 w-full lg:w-1/2">
           <div className="mx-auto px-4">
@@ -440,6 +625,11 @@ export default function Build() {
           {copySuccess ? <TiTick /> : <FaCopy />}
         </button>
       </div>
+      <ConfirmationModal
+        isOpen={isModalOpen}
+        onClose={handleCloseModal}
+        onConfirm={handleConfirmDeactivate}
+      />
     </>
   );
 }
@@ -460,4 +650,74 @@ const getBlogFromLocalStorage = () => {
     console.error("Error retrieving blog from local storage:", error);
     return null;
   }
+};
+
+const ConfirmationModal = (props: {
+  isOpen: any;
+  onClose: any;
+  onConfirm: any;
+}) => {
+  return (
+    <>
+      {props.isOpen && (
+        <div className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity">
+          <div className="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
+            <div className="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-md">
+              <div className="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
+                <div className="sm:flex sm:items-start">
+                  <div className="mx-auto flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-red-100 sm:mx-0 sm:h-10 sm:w-10">
+                    <svg
+                      className="h-6 w-6 text-red-600"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      aria-hidden="true"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z"
+                      />
+                    </svg>
+                  </div>
+                  <div className="mt-3 text-center sm:ml-4 sm:mt-0 sm:text-left">
+                    <h3
+                      className="text-base font-semibold leading-6 text-gray-900"
+                      id="modal-title"
+                    >
+                      Clear Form
+                    </h3>
+                    <div className="mt-2">
+                      <p className="text-sm text-gray-500">
+                        Are you certain you want to clear all data? This action
+                        will permanently delete the saved blog from your local
+                        storage, and it cannot be recovered.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="bg-gray-50 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
+                <button
+                  type="button"
+                  className="inline-flex w-full justify-center rounded-md bg-red-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-red-500 sm:ml-3 sm:w-auto"
+                  onClick={props.onConfirm}
+                >
+                  Clear
+                </button>
+                <button
+                  type="button"
+                  className="mt-3 inline-flex w-full justify-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:mt-0 sm:w-auto"
+                  onClick={props.onClose}
+                >
+                  Cancel
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+    </>
+  );
 };
