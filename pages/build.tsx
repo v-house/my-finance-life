@@ -8,7 +8,7 @@ import Link from "next/link";
 import router from "next/router";
 import { IoWarning } from "react-icons/io5";
 import { getSession } from "next-auth/react";
-import { admins } from "./admins";
+import { admins } from "../data/Admins";
 
 const generateRandomId = () => {
   const characters =
