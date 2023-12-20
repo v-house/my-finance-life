@@ -65,7 +65,7 @@ export const blogPosts = [
     writer: "Finanzy",
     writerDescription:
       "Welcome to our finanzy newsletter family. We wish you unforgettable learning moments - Let's start growing & earning together. Happy Investing :)",
-    date: "20 Dec 2023",
+    date: "December 20, 2023",
     subTitle:
       "Let’s decode the Influencer’s of the world’s largest Index - NIFTY 50.",
     description: [
