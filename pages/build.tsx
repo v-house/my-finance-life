@@ -1,6 +1,11 @@
 import { useEffect, useState } from "react";
 import Article from "./blogs/Article";
-import { MdAdd, MdDelete, MdDeleteForever } from "react-icons/md";
+import {
+  MdAdd,
+  MdCloudUpload,
+  MdDelete,
+  MdDeleteForever,
+} from "react-icons/md";
 import { TiTick } from "react-icons/ti";
 import { FaCopy } from "react-icons/fa";
 import { MdOpenInNew } from "react-icons/md";
@@ -421,6 +426,11 @@ export default function Build(props: { isLoading: boolean }) {
                 }}
                 className="w-full p-2 mt-1 border rounded-md text-black"
               />
+              <p className="text-red-500 italic text-xs">
+                Please maintain consistency in blog presentations, give your
+                date in the following format only.
+              </p>
+              <p className="text-red-500">Example: December 31, 2023</p>
             </div>
             <div className="mb-4">
               <label>Subtitle:</label>
@@ -634,6 +644,16 @@ export default function Build(props: { isLoading: boolean }) {
         >
           {copySuccess ? <TiTick /> : <FaCopy />}
         </button>
+        <Link
+          className="fixed text-2xl bottom-16 right-4 px-4 py-2 bg-green-500 text-white rounded-md hover:bg-green-600 focus:outline-none z-[11]"
+          href={
+            "https://github.com/v-house/my-finance-life/blob/main/data/blogPosts.tsx"
+          }
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <MdCloudUpload />
+        </Link>
       </div>
       <ConfirmationModal
         isOpen={isModalOpen}
