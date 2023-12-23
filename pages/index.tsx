@@ -14,7 +14,7 @@ const Home = () => {
           </p>
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-2 lg:gap-4">
-          {blogPosts.map((post) => (
+          {blogPosts.reverse().map((post) => (
             <div
               key={post.id}
               className="bg-white hover:bg-gray-200 rounded-lg overflow-hidden shadow-md relative"
@@ -33,31 +33,33 @@ const Home = () => {
                       </div>
                     </div>
                   )}
-                  <div className="p-4 flex flex-col justify-evenly">
-                    <div className="flex justify-between">
+                  <div className="p-4">
+                    <div className="flex flex-col justify-between">
                       <div className="flex flex-col items-start space-y-2">
                         <p className="text-gray-600 text-sm">{post.date}</p>
                         <h2 className="text-xl font-semibold mb-2">
                           {post.title}
                         </h2>
+                        <div>
+                          <p className="text-gray-600 text-sm mb-2 line-clamp-3">
+                            {post.subTitle}
+                          </p>
+                          <p className="text-gray-600 text-sm">
+                            by {post.writer}
+                          </p>
+                        </div>
                       </div>
-                    </div>
-                    <div>
-                      <p className="text-gray-600 text-sm mb-2 line-clamp-3">
-                        {post.subTitle}
-                      </p>
-                    </div>
-                    <div className="">
-                      <p className="text-gray-600 text-sm">by {post.writer}</p>
-                      <div className="flex flex-wrap gap-2 mt-2">
-                        {post.tags.map((tag) => (
-                          <span
-                            key={tag}
-                            className="bg-blue-500 text-white text-xs px-2 py-1 rounded-full"
-                          >
-                            {tag}
-                          </span>
-                        ))}
+                      <div className="">
+                        <div className="flex flex-wrap gap-2 mt-2">
+                          {post.tags.map((tag) => (
+                            <span
+                              key={tag}
+                              className="bg-blue-500 text-white text-xs px-2 py-1 rounded-full"
+                            >
+                              {tag}
+                            </span>
+                          ))}
+                        </div>
                       </div>
                     </div>
                   </div>

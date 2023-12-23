@@ -116,75 +116,73 @@ export const blogPosts = [
     imagedescription: ["Nifty 50."],
   },
   {
-  "id": "4",
-  "slug": "4",
-  "title": "Unlocking the Mystery: The Crazy Side of Indian Finance Revealed!",
-  "tags": [
-    "Finance",
-    "Crazy finance",
-    "Personal finance",
-    "Savings",
-    "Investing",
-    "Investment"
-  ],
-  "banner": "https://i.ibb.co/RpWkSbn/IMG-3593.png",
-  "writer": "Finanzy.!",
-  "writerDescription": "Welcome to our finanzy newsletter family. We wish you unforgettable learning moments - Let's start growing & earning together. Happy Investing :)",
-  "date": "23 Dec 2023",
-  "subTitle": "Time to spice up your finance knowledge with a mind-blowing fact straight from the heart of India! Brace yourselves for a financial revelation that's insightful and crazier than a Bollywood plot twist!",
-  "description": [
-    {
-      "heading": "",
-      "subDescriptions": []
-    },
-    {
-      "heading": "The Curry Index - A Spicy Tale of Economic Insight! ",
-      "subDescriptions": [
-        "Ever wondered if the price of your favorite curry could reveal the economic pulse of our nation? "
-      ]
-    },
-    {
-      "heading": "",
-      "subDescriptions": [
-        "Welcome to the world of the \"Curry Index,\" an unofficial but surprisingly accurate indicator of India's financial health! "
-      ]
-    },
-    {
-      "heading": "",
-      "subDescriptions": [
-        "Here's the scoop: The Curry Index tracks the subtle fluctuations in the cost of preparing a basic plate of dal and rice."
-      ]
-    },
-    {
-      "heading": "",
-      "subDescriptions": [
-        "Believe it or not, the logic behind this culinary index is that it reflects the impact of inflation, fuel prices, and agricultural trends on our day-to-day expenses."
-      ]
-    },
-    {
-      "heading": "",
-      "subDescriptions": [
-        "When the Curry Index is on the rise, it's not just your taste buds feeling the heat – it's a signal that inflation might be spicing up the economy! Conversely, if your dal is suddenly more affordable, it could mean smoother financial sailing ahead."
-      ]
-    },
-    {
-      "heading": "",
-      "subDescriptions": [
-        "Understanding the Curry Index isn't just about predicting the perfect time for a culinary splurge. It's about connecting with the heartbeat of our economy and recognizing the everyday items that mirror our financial landscape."
-      ]
-    },
-    {
-      "heading": "",
-      "subDescriptions": [
-        "Next time you savor that delicious curry, remember you might be decoding economic trends one bite at a time! "
-      ]
-    }
-  ],
-  "images": [
-    "https://i.ibb.co/RpWkSbn/IMG-3593.png"
-  ],
-  "imagedescription": [
-    "Relation of Curry Index on our cash burnings."
-  ]
-}
+    id: "4",
+    slug: "4",
+    title: "Unlocking the Mystery: The Crazy Side of Indian Finance Revealed!",
+    tags: [
+      "Finance",
+      "Crazy finance",
+      "Personal finance",
+      "Savings",
+      "Investing",
+      "Investment",
+    ],
+    banner: "https://i.ibb.co/RpWkSbn/IMG-3593.png",
+    writer: "Finanzy.!",
+    writerDescription:
+      "Welcome to our finanzy newsletter family. We wish you unforgettable learning moments - Let's start growing & earning together. Happy Investing :)",
+    date: "December 23, 2023",
+    subTitle:
+      "Time to spice up your finance knowledge with a mind-blowing fact straight from the heart of India! Brace yourselves for a financial revelation that's insightful and crazier than a Bollywood plot twist!",
+    description: [
+      {
+        heading: "",
+        subDescriptions: [],
+      },
+      {
+        heading: "The Curry Index - A Spicy Tale of Economic Insight! ",
+        subDescriptions: [
+          "Ever wondered if the price of your favorite curry could reveal the economic pulse of our nation? ",
+        ],
+      },
+      {
+        heading: "",
+        subDescriptions: [
+          'Welcome to the world of the "Curry Index," an unofficial but surprisingly accurate indicator of India\'s financial health! ',
+        ],
+      },
+      {
+        heading: "",
+        subDescriptions: [
+          "Here's the scoop: The Curry Index tracks the subtle fluctuations in the cost of preparing a basic plate of dal and rice.",
+        ],
+      },
+      {
+        heading: "",
+        subDescriptions: [
+          "Believe it or not, the logic behind this culinary index is that it reflects the impact of inflation, fuel prices, and agricultural trends on our day-to-day expenses.",
+        ],
+      },
+      {
+        heading: "",
+        subDescriptions: [
+          "When the Curry Index is on the rise, it's not just your taste buds feeling the heat – it's a signal that inflation might be spicing up the economy! Conversely, if your dal is suddenly more affordable, it could mean smoother financial sailing ahead.",
+        ],
+      },
+      {
+        heading: "",
+        subDescriptions: [
+          "Understanding the Curry Index isn't just about predicting the perfect time for a culinary splurge. It's about connecting with the heartbeat of our economy and recognizing the everyday items that mirror our financial landscape.",
+        ],
+      },
+      {
+        heading: "",
+        subDescriptions: [
+          "Next time you savor that delicious curry, remember you might be decoding economic trends one bite at a time! ",
+        ],
+      },
+    ],
+    images: ["https://i.ibb.co/RpWkSbn/IMG-3593.png"],
+    imagedescription: ["Relation of Curry Index on our cash burnings."],
+  },
 ];
