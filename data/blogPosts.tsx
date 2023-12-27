@@ -186,78 +186,64 @@ export const blogPosts = [
     imagedescription: ["Relation of Curry Index on our cash burnings."],
   },
   {
-  "id": "5",
-  "slug": "5",
-  "title": "Christmas Wishes ",
-  "tags": [
-    "Christmas",
-    "Finanzy",
-    "Finance",
-    "Jingle vibes",
-    "Festive vibes"
-  ],
-  "banner": "https://i.ibb.co/zQMTbD2/image.png",
-  "writer": "Finanzy.!",
-  "writerDescription": "Welcome to our finanzy newsletter family. We wish you unforgettable learning moments - Let's start growing & earning together. Happy Investing :)",
-  "date": "25 Dec 2023",
-  "subTitle": "Unwrap Prosperity: A Jingle to Financial Abundance from FINANZY.IN",
-  "description": [
-    {
-      "heading": "",
-      "subDescriptions": [
-        "Dear Finanzy Family,"
-      ]
-    },
-    {
-      "heading": "",
-      "subDescriptions": [
-        "As the holiday season unfolds, we at Finanzy extend our warmest wishes to you and your loved ones. May this Christmas bring your family joy, peace, and prosperity, and may the season's spirit fill your home with love and happiness."
-      ]
-    },
-    {
-      "heading": "",
-      "subDescriptions": [
-        "In this season of giving, we are grateful for the trust and partnership you have bestowed upon us."
-      ]
-    },
-    {
-      "heading": "",
-      "subDescriptions": [
-        "It is our privilege to accompany you on your financial journey, and we are committed to continuing to provide the highest level of service and support in the coming year."
-      ]
-    },
-    {
-      "heading": "",
-      "subDescriptions": [
-        "May the new year be filled with opportunities, growth, and financial well-being for your family. We look forward to being a part of your continued success in the year ahead."
-      ]
-    },
-    {
-      "heading": "I wish you a merry Christmas and a prosperous New Year!",
-      "subDescriptions": []
-    },
-    {
-      "heading": "",
-      "subDescriptions": [
-        "Warm regards,"
-      ]
-    },
-    {
-      "heading": "",
-      "subDescriptions": []
-    },
-    {
-      "heading": "",
-      "subDescriptions": [
-        "Finanzy.in"
-      ]
-    }
-  ],
-  "images": [
-    "https://i.ibb.co/zQMTbD2/image.png"
-  ],
-  "imagedescription": [
-    "Season's Greetings, Financial Mavericks! "
-  ]
-}
+    id: "5",
+    slug: "5",
+    title: "Christmas Wishes ",
+    tags: ["Christmas", "Finanzy", "Finance", "Jingle vibes", "Festive vibes"],
+    banner: "https://i.ibb.co/zQMTbD2/image.png",
+    writer: "Finanzy.!",
+    writerDescription:
+      "Welcome to our finanzy newsletter family. We wish you unforgettable learning moments - Let's start growing & earning together. Happy Investing :)",
+    date: "December 25, 2023",
+    subTitle:
+      "Unwrap Prosperity: A Jingle to Financial Abundance from FINANZY.IN",
+    description: [
+      {
+        heading: "",
+        subDescriptions: ["Dear Finanzy Family,"],
+      },
+      {
+        heading: "",
+        subDescriptions: [
+          "As the holiday season unfolds, we at Finanzy extend our warmest wishes to you and your loved ones. May this Christmas bring your family joy, peace, and prosperity, and may the season's spirit fill your home with love and happiness.",
+        ],
+      },
+      {
+        heading: "",
+        subDescriptions: [
+          "In this season of giving, we are grateful for the trust and partnership you have bestowed upon us.",
+        ],
+      },
+      {
+        heading: "",
+        subDescriptions: [
+          "It is our privilege to accompany you on your financial journey, and we are committed to continuing to provide the highest level of service and support in the coming year.",
+        ],
+      },
+      {
+        heading: "",
+        subDescriptions: [
+          "May the new year be filled with opportunities, growth, and financial well-being for your family. We look forward to being a part of your continued success in the year ahead.",
+        ],
+      },
+      {
+        heading: "I wish you a merry Christmas and a prosperous New Year!",
+        subDescriptions: [],
+      },
+      {
+        heading: "",
+        subDescriptions: ["Warm regards,"],
+      },
+      {
+        heading: "",
+        subDescriptions: [],
+      },
+      {
+        heading: "",
+        subDescriptions: ["Finanzy.in"],
+      },
+    ],
+    images: ["https://i.ibb.co/zQMTbD2/image.png"],
+    imagedescription: ["Season's Greetings, Financial Mavericks! "],
+  },
 ];
