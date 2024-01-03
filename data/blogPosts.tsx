@@ -316,5 +316,5 @@ export const blogPosts = [
   "imagedescription": [
     "The Bank Nifty"
   ]
-}
+},
 ];
